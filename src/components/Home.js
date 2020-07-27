@@ -1,12 +1,14 @@
 import React from "react";
 import {Card, Grid, Button} from "semantic-ui-react";
 
-export default function Home({data}) {
+export default function Home({handleDelete, data}) {
   return (
     <>
       <h1>StartWars</h1>
+      {/* <h3>Total Counts:{data.count}</h3> */}
       <Grid columns={3}>
         {data.map((films, i) => {
+         
           return (
             <Grid.Column key={i}>
               <Card>
@@ -17,7 +19,9 @@ export default function Home({data}) {
                     <p>{films.director}</p>
                     <strong>Release Date</strong>
                     <p>{films.release_date}</p>
-                    <Button primary>Delete</Button>
+                    <Button value={films.episode_id} onClick={handleDelete} primary>
+                      Delete
+                    </Button>
                   </Card.Description>
                 </Card.Content>
               </Card>
