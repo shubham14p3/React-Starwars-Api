@@ -22,9 +22,7 @@ function App() {
       (item) => item.episode_id !== Number(target.value)
     );
     setFilms(newData);
-    console.log(target.value);
   };
-  console.log("data", films);
   return (
     <>
       <Router>
